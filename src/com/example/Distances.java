@@ -43,8 +43,7 @@ public class Distances {
                 max_distance = distance;
             }
         }
-        Object[] obj = new Object[]{max_cell,max_distance};
-        return obj;
+        return new Object[]{max_cell,max_distance};
     }
 
     public int getDistance(Cell cell) {
