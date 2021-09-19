@@ -4,8 +4,10 @@ import java.util.Map;
 
 public class Mazes {
     public static void main(String[] args) {
-        Grid grid = new Grid(10, 10);
-        grid = Sidewinder.on(grid);
+        Grid grid = new Grid(4, 4);
+          grid = Wilsons.on(grid);
+//        grid = AldousBroder.on(grid);
+//        grid = Sidewinder.on(grid);
 //        grid.drawASCII();
 
         Cell root = grid.getCell(0, 9);

@@ -14,12 +14,34 @@ public class Cell {
     Cell west;
     Map<Cell, Boolean> links;
 
-
     public Cell(int row, int col) {
         this.row = row;
         this.col = col;
 
         links = new HashMap();
+    }
+
+    public ArrayList<Cell> neighbors(Grid grid) {
+        ArrayList<Cell> neighbors = new ArrayList<Cell>();
+        Cell above = grid.getCell(row - 1, col);
+        Cell below = grid.getCell(row + 1, col);
+        Cell right = grid.getCell(row, col + 1);
+        Cell left = grid.getCell(row, col - 1);
+
+        if (above != null) {
+            neighbors.add(above);
+        }
+        if (below != null) {
+            neighbors.add(below);
+        }
+        if (right != null) {
+            neighbors.add(right);
+        }
+        if (left != null) {
+            neighbors.add(left);
+        }
+
+        return neighbors;
     }
 
     public Boolean isLinked(Cell cell) {

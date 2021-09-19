@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Grid {
     int rows;
@@ -121,6 +122,21 @@ public class Grid {
         return rowArr;
     }
 
+    public static <T> T getRandomElement(ArrayList<T> list) {
+        Random rand = new Random();
+        int var = rand.nextInt(list.size());
+        System.out.println(var);
+         return list.get(var);
+    }
+
+    public ArrayList<Cell> getAllCells(){
+        ArrayList<Cell> list = new ArrayList<Cell>();
+        for (List<Cell> row: grid){
+            list.addAll(row);
+        }
+        return list;
+    }
+
     public Cell getCell(int row, int col) {
         if (row > rows - 1 || col > cols - 1 || row < 0 || col < 0) {
             return null;
@@ -144,6 +160,10 @@ public class Grid {
                 cell.east = getCell(r, c + 1);
             }
         }
+    }
+
+    public Integer size() {
+        return rows * cols;
     }
 
     public Cell randomCell() {

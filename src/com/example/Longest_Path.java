@@ -3,7 +3,9 @@ package com.example;
 public class Longest_Path {
     public static void main(String[] args) {
         Grid grid = new Grid(10, 10);
-        grid = Sidewinder.on(grid);
+          grid = Wilsons.on(grid);
+//        grid = AldousBroder.on(grid);
+//        grid = Sidewinder.on(grid);
 //        grid.drawASCII();
 
         Cell start = grid.getCell(0, 0);
