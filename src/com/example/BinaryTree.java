@@ -4,7 +4,7 @@ package com.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree {
+public class BinaryTree implements AlgorithmIf{
 
 //    private Grid grid;
 
@@ -14,7 +14,8 @@ public class BinaryTree {
 //
 //    }
 
-    public static Grid on(Grid grid) {
+
+    public Grid on(Grid grid) {
         for (int i = 0; i < grid.rows; i++) {
             for (int j = 0; j < grid.cols; j++) {
                 List<Cell> neighbors = new ArrayList<Cell>();
@@ -37,5 +38,10 @@ public class BinaryTree {
         }
 
         return grid;
+    }
+
+    @Override
+    public String getName() {
+        return "BinaryTree";
     }
 }

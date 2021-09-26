@@ -4,9 +4,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Sidewinder {
+public class Sidewinder implements AlgorithmIf{
 
-    public static Grid on(Grid grid) {
+    public Grid on(Grid grid) {
 
         for (int i = 0; i < grid.rows; i++) {
             ArrayList<Cell> run = new ArrayList<Cell>();
@@ -33,5 +33,10 @@ public class Sidewinder {
             }
         }
         return grid;
+    }
+
+    @Override
+    public String getName() {
+        return "SideWinder";
     }
 }

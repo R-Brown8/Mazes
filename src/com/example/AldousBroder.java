@@ -3,9 +3,9 @@ package com.example;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class AldousBroder {
+public class AldousBroder implements AlgorithmIf {
 
-    public static Grid on(Grid grid) {
+    public  Grid on(Grid grid) {
         Cell cell = grid.randomCell();
         Integer unvisited = (grid.size() - 1);
         while (unvisited > 0) {
@@ -18,6 +18,11 @@ public class AldousBroder {
             cell = neighbor;
         }
         return grid;
+    }
+
+    @Override
+    public String getName() {
+        return "AldousBroder";
     }
 
 }

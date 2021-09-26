@@ -122,10 +122,10 @@ public class Grid {
         return rowArr;
     }
 
-    public static <T> T getRandomElement(ArrayList<T> list) {
+    public static <T> T getRandomElement(List<T> list) {
         Random rand = new Random();
         int var = rand.nextInt(list.size());
-        System.out.println(var);
+//        System.out.println(var);
          return list.get(var);
     }
 
@@ -160,6 +160,19 @@ public class Grid {
                 cell.east = getCell(r, c + 1);
             }
         }
+    }
+
+    public List<Cell> deadends() {
+        ArrayList<Cell> list = new ArrayList<Cell>();
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                Cell cell = getCell(i, j);
+                if (cell.links.size() == 1) {
+                    list.add(cell);
+                }
+            }
+        }
+        return list;
     }
 
     public Integer size() {

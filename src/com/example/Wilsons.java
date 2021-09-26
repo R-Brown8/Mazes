@@ -15,10 +15,10 @@ public class Wilsons {
             path.add(cell);
 
             while (unvisited.contains(cell)) {
-                cell = Grid.getRandomElement(unvisited);
+                cell = Grid.getRandomElement(cell.neighbors(grid));
                 Integer position = path.indexOf(cell);
                 if (position != -1) {
-                    path = new ArrayList<>(path.subList(0, position));
+                    path = new ArrayList<>(path.subList(0, position + 1));
                 } else {
                     path.add(cell);
                 }

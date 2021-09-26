@@ -44,6 +44,14 @@ public class Cell {
         return neighbors;
     }
 
+    public Boolean hasLinks(){
+        return !links.isEmpty();
+    }
+
+    public Boolean isEmptyLinks(){
+        return links.isEmpty();
+    }
+
     public Boolean isLinked(Cell cell) {
         if (links.get(cell) == null) {
             return false;
